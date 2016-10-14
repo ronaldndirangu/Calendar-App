@@ -22,6 +22,7 @@ def add_event(selected_cal):
 		cal_dict[selected_cal][date]["Description"] = description
 		cal_dict[selected_cal][date]["Location"] = location
 		cal_dict[selected_cal][date]["Created On"] = str(datetime.now())
+		print "Successfuly created the", name, "Event"
 	except:
 		raise("Something is wrong with the DB")
 
@@ -31,7 +32,7 @@ with open("calendar.json", "r") as cal:
 	# if the file is empty the ValueError will be thrown
 	except ValueError:
 		cal_dict = {}
-	print "Menu\n", "-"*4
+	print "\nMenu\n", "-"*4
 	print "1. View Calendar\n2. Create Calendar\n\n"
 	option = raw_input("Choose an option: ")
 
